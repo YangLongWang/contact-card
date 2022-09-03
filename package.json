@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
-    "start": "cd server && node server.js",
+    "start": "npm run build && cd server && node server.js",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "concurrently \"cd client && npm install\" \"cd server && npm install\" ",
@@ -25,5 +25,9 @@
   "homepage": "https://github.com/YangLongWang/contact-card#readme",
   "dependencies": {
     "concurrently": "^7.3.0"
-  }
+  },
+  "engines": {
+    "node": "16.15.1"
+  },
+  "heroku-prebuild": "npm install --dev"
 }
