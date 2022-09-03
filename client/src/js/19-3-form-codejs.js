@@ -1,36 +1,4 @@
-// import modules
-import "./form";
-// import "./submit";
-
-// import css files
-import "../css/index.css";
-import { Tooltip, Toast, Popover } from 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-// import images
-import Logo from '../images/logo.png';
-import Bear from '../images/bear.png';
-import Dog from '../images/dog.png';
-
-// import database
-import { initdb, getDb, postDb } from './database';
-
-// import card
-import { fetchCards } from './cards';
-// import form
-import { toggleForm, clearForm } from './form';
-
-// add images on load
-window.addEventListener('load', function () {
-  initdb();
-  fetchCards();
-
-  document.getElementById('logo').src = Logo;
-  document.getElementById('bearThumbnail').src = Bear;
-  document.getElementById('dogThumbnail').src = Dog;
-});
-
-// Form functionality
+  // Form functionality
 const form = document.getElementById("formToggle");
 const newContactButton = document.getElementById("new-contact");
 let submitBtnToUpdate = false;
@@ -38,7 +6,7 @@ let profileId;
 
 newContactButton.addEventListener('click', event => {
   toggleForm()
-  })
+ })
 
 form.addEventListener('submit', event => {
   // Handle data
