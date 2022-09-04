@@ -13,7 +13,7 @@ import Bear from '../images/bear.png';
 import Dog from '../images/dog.png';
 
 // import database
-import { initdb, getDb, postDb } from './database';
+import { deleteDb, initdb, getDb, postDb } from './database';
 
 // import card
 import { fetchCards } from './cards';
@@ -38,7 +38,7 @@ let profileId;
 
 newContactButton.addEventListener('click', event => {
   toggleForm()
-  })
+})
 
 form.addEventListener('submit', event => {
   // Handle data
@@ -65,3 +65,12 @@ toggleForm();
 // Reload the DOM
 fetchCards();
 });
+
+window.deleteCard = (e) => {
+  // grabs the id from the button element attached to the contact card
+  let id = parseInt(e.id);
+  // delete the card
+  deleteDb();
+  // reload the DOM
+  fetchCards();
+};
