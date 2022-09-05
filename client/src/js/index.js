@@ -29,7 +29,6 @@ window.addEventListener('load', function () {
   document.getElementById('bearThumbnail').src = Bear;
   document.getElementById('dogThumbnail').src = Dog;
 });
-
 // Form functionality
 const form = document.getElementById("formToggle");
 const newContactButton = document.getElementById("new-contact");
@@ -70,7 +69,7 @@ window.deleteCard = (e) => {
   // grabs the id from the button element attached to the contact card
   let id = parseInt(e.id);
   // delete the card
-  deleteDb();
+  deleteDb(id);
   // reload the DOM
   fetchCards();
 };
